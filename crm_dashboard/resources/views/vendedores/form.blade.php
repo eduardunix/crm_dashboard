@@ -12,7 +12,7 @@
       @endforeach
     </select>
     <label for="avatar">Avatar:</label>
-    <input type="file" name="image">
+    <input type="file" id="image" name="image">
     <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
     <input class="btn btn-status" type="submit" value="Gravar">
   </form>

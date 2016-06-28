@@ -15,10 +15,10 @@ setTimeout(function(){
           <tableheader>
             <tr><th></th><th><h2><b>Nome</b></h2></th><th><h2><b>Meta</b></h2></th><th><h2><b>Valor</b></h2></th></tr>
         </tableheader>
-          <tr><td><img src="img/avatares/padrao.jpg" alt="img/avatares/padrao.jpg" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-success">80%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatares/padrao.jpg" alt="img/avatares/padrao.jpg" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-warning">50%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatares/padrao.jpg" alt="img/avatares/padrao.jpg" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">15%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatares/padrao.jpg" alt="img/avatares/padrao.jpg" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">10%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
+          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-success">80%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
+          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-warning">50%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
+          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">15%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
+          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">10%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
         </table>
     </div>
   </div>

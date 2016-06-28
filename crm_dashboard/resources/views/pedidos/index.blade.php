@@ -13,7 +13,7 @@
 
     </table>
 
- <a href="{!!URL::route('metas.create')!!}"><button class="btn btn-status">Cadastro</button></a>
+ <a href="{!!URL::route('pedidos.create')!!}"><button class="btn btn-status">Cadastro</button></a>
     </div>
   </body>
 </html>
