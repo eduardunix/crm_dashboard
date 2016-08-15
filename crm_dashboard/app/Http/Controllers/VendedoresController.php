@@ -10,6 +10,8 @@ use Illuminate\Pagination\Paginator;
 use Storage;
 use Image;
 use Redirect;
+use File;
+use Validator;
 
 
 class VendedoresController extends Controller
@@ -43,12 +45,12 @@ class VendedoresController extends Controller
   }
   public function store()
   {
-    $nome = Request::input('nome');
-    $meta = Request::input('meta');
-    $path = "/img/avatar/padrao.png";
-    DB::insert('insert into vendedores (nome, avatar, id_meta) values (?,?,?)',array($nome, $path, $meta));
-    return view('vendedores.adicionado');
-
+  $nome = Request::input('nome');
+  $meta = Request::input('meta');
+  $image = Input::file('image');
+  //echo $image;
+  //Storage::move($image->pathName, "/img/".$image['originalName']);
+  var_dump(Input::file(image));
   }
   public function update()
   {

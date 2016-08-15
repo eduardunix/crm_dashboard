@@ -128,10 +128,23 @@ select:hover {
 .avatar {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  border:1px #DDD solid;
 }
 
 
 .panel-default {
   border-radius: 0px;
   border-top: 2px solid red;
+}
+
+.panel-vendedores {
+  border-radius: 0px;
+  border-top: 2px solid red;
+  padding:15px;
+}
+
+.progress-bar-warning {
+  color:black;
+  background-color: red;
 }

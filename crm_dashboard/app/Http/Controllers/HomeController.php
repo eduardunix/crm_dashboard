@@ -26,10 +26,10 @@ class HomeController extends Controller
     {
         //$pedidos = DB::table('pedidos')->select('id','valor')->get();
         $pedidos = DB::table('pedidos')->join('vendedores', 'pedidos.id_vendedor', '=', 'vendedores.id')->select('pedidos.id','pedidos.valor','pedidos.numero','pedidos.created_at','vendedores.nome')->orderBy('pedidos.created_at','desc')->paginate('8');
-        $metavendedor = DB::table('pedidos')->join('vendedores', 'pedidos.id_vendedor', '=', 'vendedores.id')->select('pedidos.id','pedidos.valor','pedidos.numero','pedidos.created_at','vendedores.nome')->groupby('vendedores.nome')->get();
+        $metavendedores = DB::table('pedidos')->join('vendedores', 'pedidos.id_vendedor', '=', 'vendedores.id')->select('pedidos.id','pedidos.valor','pedidos.numero','pedidos.created_at','vendedores.nome', DB::raw('SUM(pedidos.valor) as total_vendas'))->groupby('vendedores.nome')->get();
         $meta = DB::table('meta')->select('id','valor')->where('id', '=', 3)->get();
         $somapedidosdias = DB::SELECT('select SUM(valor) as totalpedidosdias from pedidos where created_at >= CURDATE();');
         $somapedidos = DB::SELECT('select SUM(valor) as totalpedidos from pedidos');
-        return view('index', compact('pedidos','meta','somapedidos','metavendedor','somapedidosdias'));
+        return view('index', compact('pedidos','meta','somapedidos','metavendedores','somapedidosdias'));
     }
 }

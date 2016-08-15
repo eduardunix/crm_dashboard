@@ -12,7 +12,25 @@ function update() {
 <?php setlocale(LC_MONETARY, 'pt_BR'); ?>
 <div class="container-fluid">
 
-
+  <div class="col-md-12">
+    @foreach ($metavendedores as $metavendedor)
+  <div class="col-md-2">
+    <div class="panel panel-vendedores">
+      <div class="col-md-4">
+        <div class="">
+          <img class="avatar" src="/img/avatar/padrao.jpg" alt=""/>
+        </div>
+      </div>
+      <b>{{$metavendedor->nome}}</b>
+      <div class="progress">
+    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{$metavendedor->total_vendas / $meta[0]->valor * 100}}%">
+        <b>{{$metavendedor->total_vendas / $meta[0]->valor * 100}}% da meta</b>
+    </div>
+  </div>
+  </div>
+  </div>
+    @endforeach
+    </div>
   <!-- <div class="alert alert-success" role="alert"><i class="fa fa-bell" aria-hidden="true"></i> Novo Pedido! de $usuario</div> -->
 <div class="col-md-6">
   <div class="panel panel-default">
@@ -59,10 +77,6 @@ function update() {
     </div>
     </div>
 </div>
-<div class="col-md-12">
-  <div class="col-md-2">
-  </div>
-  </div>
 </div>
 </div>
 <script>

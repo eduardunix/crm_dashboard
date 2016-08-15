@@ -2,7 +2,7 @@
 @include('header')
 <div class="container">
 
-  <form action="{!!URL::route('vendedores.store')!!}" method="post">
+  <form enctype="multipart/form-data" action="{!!URL::route('vendedores.store')!!}" method="post">
     <label for="nome">Nome:</label>
     <input type="text" name="nome">
     <label for="id_meta">Meta:</label>

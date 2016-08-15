@@ -23,10 +23,11 @@
           </a>
         </div>
         <ul class="nav  navbar navbar-nav">
-          <li><a href="/">Inicio</a></li>
+          <li><a href="/home">Dashboard</a></li>
           <li><a href="/pedidos">Pedidos</a></li>
           <li><a href="/vendedores">Vendedor</a></li>
           <li><a href="/metas">Metas</a></li>
+          <li><a href="/promocao">Produto Promocional</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->

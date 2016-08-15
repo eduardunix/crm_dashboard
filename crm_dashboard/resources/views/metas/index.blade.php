@@ -1,5 +1,10 @@
 @include('header')
     <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-crosshairs" aria-hidden="true"></i> Metas</h3>
+        </div>
+        <div class="panel-body">
       <table class="table">
           <tableheader>
             <th>Meta</th><th>Ação</th>
@@ -12,5 +17,7 @@
 
  <a href="{!!URL::route('metas.create')!!}"><button class="btn btn-status">Cadastro</button></a>
     </div>
+  </div>
+</div>
   </body>
 </html>
