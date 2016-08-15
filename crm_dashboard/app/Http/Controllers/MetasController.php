@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 use DB;

@@ -35,6 +35,10 @@ a:focus {
   outline-offset: -2px;
 }
 
+td {
+  font-size: 12pt;
+  font-stretch:condensed;
+}
 input {
   height: 40px;
   width: 100%;
@@ -119,4 +123,15 @@ select:hover {
 
 .img-dashboard {
   border: 2px solid red;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+
+.panel-default {
+  border-radius: 0px;
+  border-top: 2px solid red;
 }

@@ -1,42 +1,102 @@
 @include('header')
 <script type="text/javascript">
-setTimeout(function(){
-  window.location.reload(1);
-}, 5000);
+function update() {
+  $.get("response.php", function(data) {
+    $("#dadosvendedor").html(data);
+    window.setTimeout(update, 10000);
+  });
+}
 
 </script>
+
+<?php setlocale(LC_MONETARY, 'pt_BR'); ?>
 <div class="container-fluid">
+
+
   <!-- <div class="alert alert-success" role="alert"><i class="fa fa-bell" aria-hidden="true"></i> Novo Pedido! de $usuario</div> -->
 <div class="col-md-6">
   <div class="panel panel-default">
-  <div class="panel-body">
-      <h2><b>Ultimos Pedidos</b></h2>
-        <table class="table table-hover">
+     <div class="panel-heading"><h4><b><i class="fa fa-money" aria-hidden="true"></i> Ultimos Pedidos</b></h4></div>
+  <div class="panel-body" id="dadosvendedor">
+        <table class="table table-hover" >
           <tableheader>
-            <tr><th></th><th><h2><b>Nome</b></h2></th><th><h2><b>Meta</b></h2></th><th><h2><b>Valor</b></h2></th></tr>
+            <tr><th></th><th><h3><b>Nome</b></h3></th><th><h3><b>Nº Pedido</b></h3></th><th><h3><b>Valor</b></h3></th><th><h3><b>Data</b></h3></th></tr>
         </tableheader>
-          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-success">80%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-warning">50%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">15%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
-          <tr><td><img src="img/avatar/padrao.png" alt="img/avatar/padrao.png" class="img-circle img-dashboard"></td><td><h2>Daniel Batista</h2></td><td><h2><span class="label label-danger">10%</span></h2></td><td><h2>R$ 3.000</h2></td></tr>
+        @foreach ($pedidos as $pedido)
+          <tr><td><img src="/img/avatar/padrao.jpg" class="avatar" alt="" /></td> <td>{{$pedido->nome}}</td><td>{{$pedido->numero}}</td><td >R$ {{$pedido->valor}}</td><td>{{$pedido->created_at}}</td></tr>
+        @endforeach
         </table>
     </div>
   </div>
 </div>
-    <div class="col-md-6 text-center">
-      <h1 class="text-center"><b>Meta do dia</b></h1>
-      <div class="row">
-        <h1 class="text-center titulos"><b> R$ 100.000</b></h1>
-        <h2><b style="color:red;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Faltam: R$30.000</b></h2>
-      </div>
-      <div class="panel panel-default">
-      <div class="panel-body">
+    <div class="col-md-6">
       <div class="col-md-12">
-        <img src="img/promo.png"  class="img-responsive"alt="" />
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4><b><i class="fa fa-line-chart" aria-hidden="true"></i> Metas</b></h4></div>
+      <div class="panel-body">
+        <div class="col-md-5">
+          <div id="dia" style="width:400px; height:320px;"></div>
+        </div>
+        <div class="col-md-5">
+        <div id="mes" style="width:400px; height:320px;"></div>
       </div>
     </div>
+    </div>
+    </div>
+    <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4><b><i class="fa fa-bicycle" aria-hidden="true"></i> Promoção do Mês</b></h4></div>
+    <div class="panel-body">
+    <div class="col-md-6">
+      <div class="col-md-8">
+        <img src="img/promo.png"  class="img-responsive"alt="" />
+      </div>
+      <div class="col-md-4">
+        <div id="capacetes" style="width:280px; height:180px;"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-2">
+  </div>
   </div>
 </div>
+</div>
+<script>
+  var g = new JustGage({
+    id: "dia",
+    value: {{$somapedidosdias[0]->totalpedidosdias}},
+    min: 0,
+    max: {{$meta[0]->valor}},
+    title: "Meta do dia",
+    humanFriendly: true,
+
+  });
+</script>
+<script>
+  var g = new JustGage({
+    id: "mes",
+    value: {{$somapedidos[0]->totalpedidos}},
+    min: 0,
+    max: "500000",
+    title: "Meta do Mês",
+    humanFriendly: true,
+  });
+</script>
+<script>
+  var g = new JustGage({
+    id: "capacetes",
+    value: 4,
+    min: 0,
+    max: 10,
+    title: "Capacetes Vendidos",
+    humanFriendly: true,
+
+  });
+</script>
 </div>
   </body>
 </html>

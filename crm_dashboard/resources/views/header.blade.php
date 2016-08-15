@@ -9,6 +9,8 @@
   <script type="text/javascript" src="/js/bootstrap.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://use.fontawesome.com/db41bb0122.js"></script>
+  <script src="/js/raphael-2.1.4.min.js"></script>
+  <script src="/js/justgage.js"></script>
   <title>CRM DashBoard -  @yield('title')</title>
 </head>
 <body>

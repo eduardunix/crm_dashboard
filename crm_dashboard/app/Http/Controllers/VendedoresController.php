@@ -20,7 +20,7 @@ class VendedoresController extends Controller
   }
   public function index()
   {
-    $vendedores = DB::table('vendedores')->join('meta', 'meta.id', '=', 'vendedores.id_meta')->select('vendedores.*','vendedores.avatar', 'meta.valor')->orderBy('id','desc')->paginate('5');
+    $vendedores = DB::table('vendedores')->select('vendedores.*')->orderBy('id','desc')->paginate('5');
     return view('vendedores.index', compact('vendedores'));
   }
   public function  show($id)
