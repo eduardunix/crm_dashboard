@@ -1,4 +1,5 @@
 @include('header')
+<?php  setlocale(LC_MONETARY, 'pt_BR.UTF-8'); ?>
     <div class="container">
       <div class="panel panel-default">
       <div class="panel-heading">

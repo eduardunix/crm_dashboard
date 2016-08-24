@@ -75,7 +75,7 @@ JustGage = function(config) {
 
     // titleFontFamily : string
     // color of gauge title
-    titleFontFamily: kvLookup('titleFontFamily', config, dataset, "sans-serif"),
+    titleFontFamily: kvLookup('titleFontFamily', config, dataset, "Open Sans"),
 
     // titlePosition : string
     // 'above' or 'below'
@@ -87,7 +87,7 @@ JustGage = function(config) {
 
     // valueFontFamily : string
     // color of label showing current value
-    valueFontFamily: kvLookup('valueFontFamily', config, dataset, "Arial"),
+    valueFontFamily: kvLookup('valueFontFamily', config, dataset, "Open Sans"),
 
     // symbol : string
     // special symbol to show next to value
@@ -144,11 +144,11 @@ JustGage = function(config) {
 
     // levelColors : string[]
     // colors of indicator, from lower to upper, in RGB format
-    levelColors: kvLookup('levelColors', config, dataset, ["#a9d70b", "#f9c802", "#ff0000"], 'array', ','),
+    levelColors: kvLookup('levelColors', config, dataset, ["#fc0000", "#fc5f00", "#97e100"], 'array', ','),
 
     // startAnimationTime : int
     // length of initial animation
-    startAnimationTime: kvLookup('startAnimationTime', config, dataset, 700),
+    startAnimationTime: kvLookup('startAnimationTime', config, dataset, 900),
 
     // startAnimationType : string
     // type of initial animation (linear, >, <,  <>, bounce)
@@ -156,7 +156,7 @@ JustGage = function(config) {
 
     // refreshAnimationTime : int
     // length of refresh animation
-    refreshAnimationTime: kvLookup('refreshAnimationTime', config, dataset, 700),
+    refreshAnimationTime: kvLookup('refreshAnimationTime', config, dataset, 900),
 
     // refreshAnimationType : string
     // type of refresh animation (linear, >, <,  <>, bounce)
@@ -168,7 +168,7 @@ JustGage = function(config) {
 
     // valueMinFontSize : int
     // absolute minimum font size for the value
-    valueMinFontSize: kvLookup('valueMinFontSize', config, dataset, 16),
+    valueMinFontSize: kvLookup('valueMinFontSize', config, dataset, 20),
 
     // titleMinFontSize
     // absolute minimum font size for the title
@@ -200,7 +200,7 @@ JustGage = function(config) {
 
     // humanFriendly : bool
     // convert large numbers for min, max, value to human friendly (e.g. 1234567 -> 1.23M)
-    humanFriendly: kvLookup('humanFriendly', config, dataset, false),
+    humanFriendly: kvLookup('humanFriendly', config, dataset, true),
 
     // noGradient : bool
     // whether to use gradual color change for value, or sector-based
@@ -212,15 +212,15 @@ JustGage = function(config) {
 
     // relativeGaugeSize : bool
     // whether gauge size should follow changes in container element size
-    relativeGaugeSize: kvLookup('relativeGaugeSize', config, dataset, false),
+    relativeGaugeSize: kvLookup('relativeGaugeSize', config, dataset, true),
 
     // counter : bool
     // animate level number change
-    counter: kvLookup('counter', config, dataset, false),
+    counter: kvLookup('counter', config, dataset, true),
 
     // decimals : int
     // number of digits after floating point
-    decimals: kvLookup('decimals', config, dataset, 0),
+    decimals: kvLookup('decimals', config, dataset, 2),
 
     // customSectors : [] of objects
     // number of digits after floating point
@@ -232,7 +232,7 @@ JustGage = function(config) {
 
     // pointer : bool
     // show value pointer
-    pointer: kvLookup('pointer', config, dataset, false),
+    pointer: kvLookup('pointer', config, dataset, true),
 
     // pointerOptions : object
     // define pointer look

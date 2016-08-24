@@ -53,9 +53,10 @@ class PedidosController extends Controller
     {
       $vendedor = Request::input('vendedor');
       $pedido = Request::input('pedido');
+      $produto = Request::input('produto');
       $valor = Request::input('valor');
       $date = date('d-m-yyyy H:i:s');
-      DB::insert('insert into pedidos (id_vendedor, numero, valor, created_at) values (?,?,?,NOW())',array($vendedor, $pedido, $valor));
+      DB::insert('insert into pedidos (id_vendedor, numero, valor,produto, created_at) values (?,?,?,?,NOW())',array($vendedor, $pedido,$valor,$produto));
       return view('pedidos.adicionado');
     }
 }

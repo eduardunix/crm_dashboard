@@ -27,6 +27,11 @@ class MetasController extends Controller
     {
       return view('metas.form');
     }
+
+    public  function update()
+    {
+      
+    }
     public function destroy($id)
     {
       DB::table('meta')->where('id', '=', $id)->delete();

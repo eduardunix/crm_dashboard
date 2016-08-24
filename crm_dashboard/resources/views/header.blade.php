@@ -7,13 +7,25 @@
   <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script type="text/javascript" src="/js/bootstrap.js"></script>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://use.fontawesome.com/db41bb0122.js"></script>
   <script src="/js/raphael-2.1.4.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/jquery.maskMoney.js"></script>
   <script src="/js/justgage.js"></script>
   <title>CRM DashBoard -  @yield('title')</title>
 </head>
 <body>
+  <script type="text/javascript">
+  $(function() {
+  $('#currency').maskMoney();
+})
+  </script>
+  <script type="text/javascript">
+  $( function() {
+     $( document ).tooltip();
+   } );
+  </script>
   <header>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -49,3 +61,6 @@
       </div>
     </nav>
   </header>
+<script type="text/javascript">
+$(".currency").maskMoney({symbol:"R$",decimal:",",thousands:"."});
+</script>

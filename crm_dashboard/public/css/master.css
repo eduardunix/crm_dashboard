@@ -5,6 +5,9 @@ body {
   font-family: "Open Sans";
 }
 
+th {
+  color:#000;
+}
 .titulos {
   font-size: 72pt;
   width:auto;
@@ -36,8 +39,11 @@ a:focus {
 }
 
 td {
-  font-size: 12pt;
+  font-size: 14pt;
   font-stretch:condensed;
+  vertical-align: middle !important;
+  display: table-cell;
+  vertical-align: middle;
 }
 input {
   height: 40px;
@@ -124,14 +130,46 @@ select:hover {
 .img-dashboard {
   border: 2px solid red;
 }
-
-.avatar {
-  width: 50px;
-  height: 50px;
+.avatar-x2 {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
-  border:1px #DDD solid;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  margin-bottom: 2%;
+  transition: 0.3s;
+}
+.avatar {
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  margin-bottom: 2%;
+  transition: 0.3s;
 }
 
+.avatar:hover {
+border: 1px solid red;
+}
+
+.avatar-dash {
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  transition: 0.3s;
+}
 
 .panel-default {
   border-radius: 0px;
@@ -147,4 +185,26 @@ select:hover {
 .progress-bar-warning {
   color:black;
   background-color: red;
+}
+
+.produto {
+  width: 150px;
+}
+
+.badge {
+  position:absolute;
+  margin-left: 1%;
+  margin-top: 5%;
+  background: none;
+  position:absolute;
+   top:40px;
+}
+.item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+
+span {
+  background-color: none;
 }

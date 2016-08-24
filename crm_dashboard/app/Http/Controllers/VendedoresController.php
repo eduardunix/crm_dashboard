@@ -11,6 +11,7 @@ use Storage;
 use Image;
 use Redirect;
 use File;
+use Session;
 use Validator;
 
 
@@ -47,10 +48,33 @@ class VendedoresController extends Controller
   {
   $nome = Request::input('nome');
   $meta = Request::input('meta');
-  $image = Input::file('image');
-  //echo $image;
-  //Storage::move($image->pathName, "/img/".$image['originalName']);
-  var_dump(Input::file(image));
+  //$input = Input::file('image');
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('upload')->withInput()->withErrors($validator);
+  }
+  else {
+    if (Input::file('image')->isValid()) {
+      $destinationPath = 'uploads';
+      $extension = Input::file('image')->getClientOriginalExtension();
+      $fileName = rand(11111,99999).'.'.$extension;
+      Input::file('image')->move($destinationPath, $fileName);
+      $caminho = "/uploads/". $fileName;
+      Session::flash('success', 'Upload successfully');
+      DB::insert('insert into vendedores (nome, id_meta, avatar) values (?,?,?)',array($nome, $meta,$caminho));
+      return Redirect::to('vendedores');
+    }
+    else {
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('upload');
+    }
+  }
+    return view('vendedores.adicionado');
   }
   public function update()
   {
