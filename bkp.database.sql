@@ -167,7 +167,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'eduardo adriano ramos','root@eduardunix.com.br','$2y$10$DtQ6shSdKsAIN4mHOKAkg.dG/3uto1COhGFRiUpQZUp2AVric8ytq','HifEiNfcpwlIXl3pE8nlwst0ZGRzNGkixlwgRj479DZRGXjPMs6lN9bBtw7x','2016-06-27 13:10:30','2016-08-16 13:52:07');
+INSERT INTO `users` VALUES (1,'Administrador','email@administrador.com.br','$2y$10$DtQ6shSdKsAIN4mHOKAkg.dG/3uto1COhGFRiUpQZUp2AVric8ytq','HifEiNfcpwlIXl3pE8nlwst0ZGRzNGkixlwgRj479DZRGXjPMs6lN9bBtw7x','2016-06-27 13:10:30','2016-08-16 13:52:07');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,6 @@ CREATE TABLE `vendedores` (
 
 LOCK TABLES `vendedores` WRITE;
 /*!40000 ALTER TABLE `vendedores` DISABLE KEYS */;
-INSERT INTO `vendedores` VALUES (4,'Daniel Batista','/uploads/16112.jpg','5'),(5,'Gabriel Lombardi','/uploads/28061.jpg','6'),(6,'Daniela Mondini','/uploads/83973.jpg','5'),(7,'Gabriel Osorio','/uploads/90086.png','5'),(8,'Katia Ruon','/uploads/32308.png','5'),(9,'Luana Rosa','/uploads/21364.png','5');
 /*!40000 ALTER TABLE `vendedores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
